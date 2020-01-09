@@ -1,0 +1,10 @@
+{
+  "name": "cs_project",
+  "version": "1.0.0",
+  "description": "Technical Test - ContentSquare",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Benny Deddouch"
+}
