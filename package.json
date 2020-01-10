@@ -2,9 +2,15 @@
   "name": "cs_project",
   "version": "1.0.0",
   "description": "Technical Test - ContentSquare",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/app.js",
+    "test": "mocha || true"
   },
-  "author": "Benny Deddouch"
+  "author": "Benny Deddouch",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.0"
+  }
 }

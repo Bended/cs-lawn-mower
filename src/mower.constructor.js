@@ -9,7 +9,6 @@ module.exports = class Mower {
         this.yLimit = lawn[1];
     }
     drive(instructions) {
-        console.log('instructions', instructions);
         instructions.forEach(instruction => {
             if (instruction === 'L' || instruction === 'R') {
                 this.rotate(instruction);
