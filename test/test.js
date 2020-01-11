@@ -1,6 +1,6 @@
 var assert = require('chai').assert;
 var should = require('chai').should();
-const Mower = require('../src/mower.module');
+const Mower = require('../src/mower');
 const Actions = require('../src/mower.actions');
 
 describe('Mower', function() {

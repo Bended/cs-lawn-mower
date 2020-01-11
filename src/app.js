@@ -1,16 +1,28 @@
-const Mower = require('./mower.module');
-const fs = require('fs');
+'use strict';
 
-const data = fs.readFileSync('input.txt', 'utf8').split('\n').filter(line => line !== '');
-const lawnSize = data[0].split(' ');
-let i = 1;
-while (i < data.length) {
-    let position = (data[i]).split(' ');
-    let initialPosition = [ parseInt(position[0]), parseInt(position[1]) ];
-    let initialDirection = position[2];
-    Mower.init(initialPosition, initialDirection, lawnSize);
-    Mower.drive((data[i + 1]).split(''));
-    console.log('Final location', Mower.getFinalLocation());
-    i+=2;
-}
+const Mower = require('./mower');
+const Helper = require('./helper');
+
+const main = () => {
+    try {
+        const data = Helper.getData();
+        const lawnSize = Helper.getLawnSize(data);
+        let i = 1;
+        while (i < data.length) {
+            const {
+                initialPosition,
+                initialDirection
+            } = Helper.parseLine(data[i], lawnSize);
+            Mower.init(initialPosition, initialDirection, lawnSize);
+            const finalLocal = Mower.drive((data[i + 1]).split(''));
+            console.log('Final location: ', finalLocal);
+            i += 2;
+        }
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+main();
+
 

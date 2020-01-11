@@ -1,3 +1,5 @@
+'use strict';
+
 const DIRECTION = ['N', 'E', 'S', 'W'];
 
 module.exports = {

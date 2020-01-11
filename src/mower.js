@@ -29,4 +29,3 @@ function drive (instructions) {
 function getFinalLocation () {
     return `${this.position[0]} ${this.position[1]} ${this.direction}`;
 }
-
