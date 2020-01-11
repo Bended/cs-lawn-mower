@@ -10,19 +10,38 @@ module.exports = {
 function move (currPosition, lawn, direction) {
     switch (direction) {
         case 'N': {
-            if (currPosition[1] < lawn[1]) return [currPosition[0], currPosition[1]+=1];
-            break;
-        } case 'E': {
-            if (currPosition[0] < lawn[0]) return [currPosition[0]+=1, currPosition[1]];
-            break;
-        } case 'S': {
-            if (currPosition[1] > 0) return [currPosition[0], currPosition[1]-=1];
-            break;
-        } case 'W': {
-            if (currPosition[0] > 0) return [currPosition[0]-=1, currPosition[1]];
-            break;
+            if (currPosition[1] === lawn[1]) {
+                return currPosition;
+            } else {
+                return [currPosition[0], currPosition[1]+=1];
+            }
+        }
+        case 'E': {
+            if (currPosition[0] === lawn[0]) {
+                return currPosition;
+            } else {
+                return [currPosition[0]+=1, currPosition[1]];
+            }
+        }
+        case 'S': {
+            if (currPosition[1] === 0) {
+                return currPosition;
+            } else {
+                return [currPosition[0], currPosition[1]-=1];
+            }
+        }
+        case 'W': {
+            if (currPosition[0] === 0) {
+                return currPosition;
+            } else {
+                return [currPosition[0]-=1, currPosition[1]];
+            }
         }
     }
+
+
+
+
 }
 function rotate (rotation, currDirection) {
     const directionIndex = DIRECTION.indexOf(currDirection);

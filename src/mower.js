@@ -1,22 +1,23 @@
+'use strict';
+
 var Actions = require('./mower.actions');
 
-var Mower = {};
-
-module.exports = Mower = {
+module.exports = {
     init,
     drive,
-    getFinalLocation
 };
 
+const INSTRUCTIONS = ['F', 'L', 'R'];
+
 function init (initialPosition, initialDirection, lawn) {
-    this.position = [];
-    this.position[0] = initialPosition[0];
-    this.position[1] = initialPosition[1];
+    if (!initialPosition || !initialDirection || !lawn) throw new Error('Error in init: Missing parameters');
+    this.position = initialPosition;
     this.direction = initialDirection;
     this.lawn = lawn
 }
 
 function drive (instructions) {
+    if (!instructions.every(instruction => INSTRUCTIONS.includes(instruction))) throw new Error('Error in drive: Invalid instruction');
     instructions.forEach(instruction => {
         if (instruction === 'L' || instruction === 'R') {
             this.direction = Actions.rotate(instruction, this.direction);
@@ -24,8 +25,5 @@ function drive (instructions) {
             this.position = Actions.move(this.position, this.lawn, this.direction);
         }
     });
-}
-
-function getFinalLocation () {
-    return `${this.position[0]} ${this.position[1]} ${this.direction}`;
+    return `${this.position[0]} ${this.position[1]} ${this.direction}`
 }

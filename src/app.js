@@ -14,8 +14,8 @@ const main = () => {
                 initialDirection
             } = Helper.parseLine(data[i], lawnSize);
             Mower.init(initialPosition, initialDirection, lawnSize);
-            const finalLocal = Mower.drive((data[i + 1]).split(''));
-            console.log('Final location: ', finalLocal);
+            const final = Mower.drive((data[i + 1]).split(''));
+            console.log('Final location: ', final);
             i += 2;
         }
     } catch (err) {
