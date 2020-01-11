@@ -38,11 +38,8 @@ function move (currPosition, lawn, direction) {
             }
         }
     }
-
-
-
-
 }
+
 function rotate (rotation, currDirection) {
     const directionIndex = DIRECTION.indexOf(currDirection);
     if (rotation === 'L') {

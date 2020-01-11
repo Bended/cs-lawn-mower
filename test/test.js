@@ -1,4 +1,4 @@
-var assert = require('chai').assert;
+const assert = require('chai').assert;
 const Actions = require('../src/mower.actions');
 
 describe('Mower', function() {
