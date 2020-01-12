@@ -1,3 +1,12 @@
+##Run the App
+```
+npm run start
+```
+##Run tests
+```
+npm run test
+```
+
 ##Technical test - ContentSquare
 ContentSquare is building an automatic lawn mower designed to mow rectangular surfaces.
 (The mower can be programmed to mow the entire surface.)
@@ -47,12 +56,4 @@ This output is expected (final positions of mowers):
 ```
 1 3 N
 5 1 E
-```
-##Run the App
-```
-npm run start
-```
-##Run tests
-```
-npm run test
 ```
