@@ -15,7 +15,7 @@ const parseLine = (command, lawn) => {
     const commandArr = (command).split(' ');
     if (checkMowerInit(commandArr, lawn)) throw new Error('Mower outside of lawn or position not set properly');
     const initialPosition = [parseInt(commandArr[0]), parseInt(commandArr[1])];
-    let initialDirection = commandArr[2];
+    const initialDirection = commandArr[2];
     if (!DIRECTION.includes(commandArr[2]))
         throw new Error ('Initial Direction is not properly defined');
     return {
